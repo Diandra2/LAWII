@@ -8,7 +8,7 @@ final class Connection
   {
    
     $type = "mysql";
-    $user = "Alunos";
+    $user = "alunos";
     $pass ="cefetmg";
     $name = "alunos";
     $host = "localhost";
