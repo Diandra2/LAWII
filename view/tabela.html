@@ -1,18 +1,32 @@
 <table>
-    <thead>
-      <tr>
-        <th>Disciplina</th>
-        <th>Professor</th>
-        <th>Materia</th>
-      </tr>
-    </thead>
-    <tbody>
-      {linha}
-      <tr>
-        <td>{disciplina}</td>
-        <td>{professor}</td>
-        <td>{materia}</td>
-      </tr>
-      {/linha}
-    </tbody>
-  </table>
+  <thead>
+    <tr>
+      <th>Disciplina</th>
+      <th>Professor</th>
+      <th>Materia</th>
+      <th>Editar</th>
+      <th>Apagar</th>
+    </tr>
+  </thead>
+  <tbody>
+    {linha}
+    <tr>
+      <td>{disciplina}</td>
+      <td>{professor}</td>
+      <td>{materia}</td>
+      <td>
+        <button type="button">Editar</button>
+      </td>
+      <td>
+        <button
+          type="button"
+          onclick="if(confirm('Deseja realmente apagar?'))
+            location.href='?class=Tabela&method=remover&id={id}'"
+        >
+          Remover
+        </button>
+      </td>
+    </tr>
+    {/linha}
+  </tbody>
+</table>
