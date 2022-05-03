@@ -1,18 +1,33 @@
 <form method="post" action="?class=Form&method=salvar">
-    <div>
-      <label for="disciplina">Disciplina:</label>
-      <input type="varcha" name="disciplina" id="disciplina" required maxlength="100" />
-    </div>
-    <div>
-      <label for="professor">Professor:</label>
-      <textarea name="professor" id="professor" required></textarea>
-    </div>
-    <div>
-      <label for="matera">Materia:</label>
-      <input type="text"  name="materia" id="materia" required />
-    </div>
-    <div>
-      <button type="submit">Salvar</button>
-    </div>
-  </form>
+  <input type="hidden" name="id" value="{id}" />
+  <div>
+    <label for="disciplina">Disciplina:</label>
+    <input
+      type="text"
+      name="disciplina"
+      id="disciplina"
+      required
+      maxlength="50"
+      value="{disciplina}"
+    />
+  </div>
+  <div>
+    <label for="professor">Professor:</label>
+    <textarea name="professor" id="professor" required>{professor}</textarea>
+  </div>
+  <div>
+    <label for="materia">Materia:</label>
+    <input
+    type="text"
+    name="materia"
+    id="materia"
+    required
+    maxlength="50"
+    value="{materia}"
+    />
+  </div>
+  <div>
+    <button type="submit">Salvar</button>
+  </div>
+</form>
   
