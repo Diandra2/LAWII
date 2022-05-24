@@ -7,8 +7,8 @@ function classLoader($class)
  $pastas = array(
  "shared/controller",
  "shared/model",
- "public/controller",
- "public/model"
+ "restrict/controller",
+ "restrict/model"
  );
  foreach ($pastas as $pasta) {
  $arquivo = "{$pasta}/{$nomeArquivo}";
@@ -19,20 +19,24 @@ function classLoader($class)
 }
 spl_autoload_register("classLoader");
 Session::startSession();
-Session::freeSession();
+if (!Session::getValue("id")) {
+ header("Location:" . Aplicacao::$path . "/");
+}
 // Front Controller
 class Aplicacao
 {
- static private $app = "/modelo";
- static public function run()
+ static public $path = "/modelo";
+ static private $uri = "/modelo/restrita.php";
+ public static function run()
  {
  $layout = new
-Template("public/view/layout.html");
- $layout->set("uri", self::$app);
+Template("restrict/view/layout.html");
+ $layout->set("uri", self::$uri);
+ $layout->set("path", self::$path);
  if (isset($_GET["class"])) {
  $class = $_GET["class"];
  } else {
- $class = "Login";
+ $class = "Inicio";
  }
  if (isset($_GET["method"])) {
  $method = $_GET["method"];
@@ -45,4 +49,3 @@ Template("public/view/layout.html");
  $pagina->$method();
  } else {
  $pagina->controller();
- }
