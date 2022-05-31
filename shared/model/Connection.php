@@ -6,11 +6,10 @@ final class Connection
   }
   public static function open()
   {
-   
     $type = "mysql";
     $user = "alunos";
-    $pass ="cefetmg";
-    $name = "alunos";
+    $pass = "cefetmg";
+    $name = "Diandra";
     $host = "localhost";
     switch ($type) {
       case 'pgsql':

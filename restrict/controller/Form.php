@@ -9,7 +9,7 @@ class Form
   }
   public function controller()
   {
-    $form = new Template("view/form.html");
+    $form = new Template("restrict/view/form.html");
     $form->set("id", "");
     $form->set("disciplina", "");
     $form->set("professor", "");

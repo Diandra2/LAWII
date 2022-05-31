@@ -1,0 +1,38 @@
+<form method="post" action="?class=Form&method=salvar">
+    <input type="hidden" name="id" value="{id}" />
+    <div>
+      <label for="disciplina">disciplina:</label>
+      <input
+        type="text"
+        name="disciplina"
+        id="disciplina"
+        required
+        maxlength="50"
+        value="{disciplina}"
+      />
+    </div>
+    <div>
+      <label for="professor">professor:</label>
+      <input
+        type="text"
+        name="professor"
+        id="professor"
+        required
+        maxlength="50"
+        value="{professor}"
+      />
+    </div>
+    <div>
+      <label for="materia">Posição:</label>
+      <input
+        type="number"
+        name="materia"
+        id="materia"
+        required
+        value="{materia}"
+      />
+    </div>
+    <div>
+      <button type="submit">Salvar</button>
+    </div>
+</form>
